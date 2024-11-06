@@ -1,0 +1,1 @@
+web: gunicorn -w 3 -b :8080 application:application
