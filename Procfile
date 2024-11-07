@@ -1,1 +1,1 @@
-web: gunicorn -w 3 -b :8080 application:application
+web: gunicorn application:application --bind 0.0.0.0:8000
