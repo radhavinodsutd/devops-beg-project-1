@@ -1,0 +1,27 @@
+name: CI/CD Pipeline  # A name for this workflow
+
+on:
+  push:
+    branches:
+      - main  # Runs this workflow on any push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Sets the environment (virtual machine) to use
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2  # Checks out the code in the repo
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'  # Specifies the Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Installs project dependencies
+
+      - name: Run tests
+        run: |
+          pytest  # Runs tests in the repository
