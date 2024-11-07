@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest  # Sets the environment (virtual machine) to use
     steps:
       - name: Check out code
-        uses: actions/checkout@v2  # Checks out the code in the repo
+        uses: actions/checkout@v3  # Checks out the code in the repo
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'  # Specifies the Python version
 
